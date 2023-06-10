@@ -1,0 +1,32 @@
+<div>
+    <span id="indicator" class="htmx-indicator">
+        <img src="spinner.gif">
+    </span><br>
+    <form
+            hx-post="/api/users"
+            hx-swap="none"
+    >
+        <label for="name">Name</label>
+        <input id="name"
+               type="text"
+               name="name"
+               hx-trigger="change"
+               hx-post="/api/users/validateName"
+               hx-target="#name-error"
+               hx-swap="innerHTML"
+               hx-indicator="#indicator"
+        >
+        <span id="name-error" style="color: red"></span><br>
+        <label for="age">Age</label>
+        <input id="age"
+               type="number"
+               name="age"
+        >
+        <label for="location">Location</label>
+        <input id="location"
+               type="text"
+               name="location">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>

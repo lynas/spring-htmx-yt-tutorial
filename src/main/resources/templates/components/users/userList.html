@@ -1,0 +1,29 @@
+<div>
+    <div class="row" xmlns:hx="http://www.w3.org/1999/xhtml">
+        <div class="col-lg-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Location</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.id}"
+                        hx-trigger="click"
+                        hx:get="|/views/users/byId/${user.id}|"
+                        hx-target="#user-details"
+                    ></td>
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.age}"></td>
+                    <td th:text="${user.location}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

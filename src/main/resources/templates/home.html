@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:hx="https://github.com/wimdeblauwe/htmx-spring-boot-thymeleaf">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body style="background-color: white">
+<h1>Hello htmx</h1>
+<div hx-trigger="load" hx-get="/views/users/createUserForm"></div>
+<div hx-trigger="load, refreshUserList from:body" hx-get="/views/users/userList"></div>
+<br>
+<br>
+<div id="user-details"></div>
+<script src="https://unpkg.com/htmx.org@1.9.2"></script>
+</body>
+</html>
